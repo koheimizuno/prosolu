@@ -61,8 +61,89 @@ img {
   object-fit: cover;
 }
 
+input[type="text"] {
+  width: 100%;
+  height: 44px;
+  background-color: var(--lightgray-color);
+  border: 1px solid #bdbdbd;
+  font-size: 20px;
+  padding: 8px 10px;
+}
+
 input:focus {
   outline: 0;
+}
+/* The container */
+.checkbox-wrapper {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-wrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 12px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-wrapper:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-wrapper input:checked ~ .checkmark {
+  background-color: var(--light-primary-color);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-wrapper input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-wrapper .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+hr {
+  margin: 0;
 }
 
 hr.dark {
@@ -101,6 +182,10 @@ hr.semi-primary {
   .sp-only {
     display: block;
   }
+}
+
+.mt-6 {
+  margin-top: 24px;
 }
 
 .container {
@@ -270,6 +355,12 @@ hr.semi-primary {
   font-weight: 500;
 }
 
+.contact-txt {
+  font-size: 20px;
+  line-height: auto;
+  font-weight: 500;
+}
+
 .copyright {
   font-size: 12px;
   line-height: 16px;
@@ -331,6 +422,17 @@ hr.semi-primary {
   border: 1px solid var(--white-color);
   border-top: 0;
   cursor: pointer;
+}
+
+.btn-required {
+  width: 70px;
+  height: 29px;
+  background-color: #828282;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  line-height: auto;
+  font-weight: 600;
 }
 
 .tag {
@@ -863,16 +965,8 @@ header nav .nav-links > li::before {
   }
 }
 
-.company-sec .company-info hr {
-  margin: 0;
-}
-
 .information-sec {
   margin-top: 48px;
-}
-
-.information-sec hr {
-  margin: 0;
 }
 
 .information-sec .message-title-subsec {
@@ -924,5 +1018,205 @@ header nav .nav-links > li::before {
 
 .information-sec > div.container > div:has(.btn-more) {
   margin: auto;
+  text-align: center;
+}
+
+.contact-sec {
+  color: #1c1c1c;
+  padding: 64px 150px;
+  background-color: #f2f2f2;
+}
+
+@media (max-width: 768px) {
+  .contact-sec {
+    padding: 64px 0;
+  }
+}
+
+.contact-sec .section-title-jp {
+  color: var(--light-primary-color);
+}
+
+.contact-sec form {
+  padding: 62px 82px 40px 82px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 64px;
+}
+
+@media (max-width: 768px) {
+  .contact-sec form {
+    padding: 16px 16px 32px;
+    margin-top: 26px;
+  }
+}
+
+.contact-sec form hr {
+  margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .contact-sec form hr {
+    margin: 24px 0;
+  }
+}
+
+.contact-sec form hr:first-of-type {
+  margin-top: 55px;
+}
+
+@media (max-width: 768px) {
+  .contact-sec form hr:first-of-type {
+    margin-top: 47px;
+  }
+}
+
+.contact-sec form hr:last-of-type {
+  margin-bottom: 52px;
+}
+
+@media (max-width: 768px) {
+  .contact-sec form hr:last-of-type {
+    margin-bottom: 32px;
+  }
+}
+
+.contact-sec form .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .contact-sec form .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+.contact-sec form .row:has(.privacy) {
+  align-items: flex-start;
+}
+
+.contact-sec form .row:has(.privacy) > div:has(.privacy) > div:has(.privacy) {
+  background-color: #fafafa;
+  border: 1px solid #bdbdbd;
+  padding: 8px;
+}
+.contact-sec form .row:has(.privacy) .privacy {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.contact-sec form .row .sub-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-sec form .row .sub-row > p {
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .contact-sec form .row .sub-row > p {
+    width: auto;
+  }
+}
+
+.contact-sec form .row > div:not(.sub-row) {
+  width: 460px;
+}
+
+@media (max-width: 768px) {
+  .contact-sec form .row > div:not(.sub-row) {
+    width: 100%;
+  }
+}
+
+.contact-sec form .row .input-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .contact-sec form .row .input-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+.contact-sec form .row .input-row .input-subrow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-sec form .row .input-row .input-subrow label {
+  width: 40px;
+  white-space: nowrap;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .contact-sec form .row .input-row .input-subrow label {
+    text-align: left;
+  }
+}
+
+.contact-sec form .row .input-row .input-subrow label + input {
+  width: calc(100% - 40px);
+}
+
+.contact-sec form .row div:has(.danger) {
+  position: relative;
+}
+
+.contact-sec form .row:has(.danger) {
+  margin-bottom: 23px;
+}
+
+@media (max-width: 768px) {
+  .contact-sec form .row:has(.danger) {
+    margin-bottom: 48px;
+  }
+}
+
+.contact-sec form .row div:has(.danger) .danger {
+  position: absolute;
+  bottom: -30px;
+}
+
+@media (max-width: 768px) {
+  .contact-sec form .row div:has(.danger) .danger {
+    bottom: -40px;
+  }
+}
+
+.contact-sec form .row .checkbox-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 27px;
+}
+
+.contact-sec form > div:has(.btn-primary) {
+  width: 100%;
+  text-align: center;
+}
+
+footer {
+  background-color: #828282;
+  padding: 20px 0;
   text-align: center;
 }
