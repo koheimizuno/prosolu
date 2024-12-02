@@ -329,6 +329,7 @@ hr.semi-primary {
   background-color: transparent;
   color: var(--white-color);
   border: 1px solid var(--white-color);
+  border-top: 0;
   cursor: pointer;
 }
 
@@ -792,21 +793,136 @@ header nav .nav-links > li::before {
   padding: 72px 0 98px;
 }
 
+.company-sec div.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-sec .company-info {
+  width: 100%;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .company-sec .company-info {
+    margin-top: 40px;
+  }
+}
+
 .company-sec .company-info .row {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
+  padding: 24px 0;
+}
+
+@media (max-width: 768px) {
+  .company-sec .company-info .row {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0;
+  }
 }
 
 .company-sec .company-info .row p:first-of-type {
   width: 120px;
 }
 
+@media (max-width: 768px) {
+  .company-sec .company-info .row p:first-of-type {
+    width: 100%;
+  }
+}
+
 .company-sec .company-info .row p:last-of-type {
   width: calc(100% - 120px);
 }
 
+@media (max-width: 768px) {
+  .company-sec .company-info .row p:last-of-type {
+    width: 100%;
+  }
+}
+
+.company-sec .company-info div.map {
+  margin-bottom: 24px;
+}
+
+.company-sec .company-info div.map iframe {
+  width: 100%;
+  height: 310px;
+}
+
+@media (max-width: 768px) {
+  .company-sec .company-info div.map iframe {
+    height: 240px;
+  }
+}
+
 .company-sec .company-info hr {
-  margin: 24px 0;
+  margin: 0;
+}
+
+.information-sec {
+  margin-top: 48px;
+}
+
+.information-sec hr {
+  margin: 0;
+}
+
+.information-sec .message-title-subsec {
+  margin-bottom: 34px;
+}
+
+.information-sec .tag-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+}
+
+.information-sec .row-group {
+  padding-top: 42px;
+}
+
+@media (max-width: 768px) {
+  .information-sec .row-group {
+    padding-top: 32px;
+  }
+}
+
+.information-sec .row-group .row {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .information-sec .row-group .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+.information-sec .row-group .row .sub-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.information-sec > div.container > div:has(.btn-more) {
+  margin: auto;
+  text-align: center;
 }
