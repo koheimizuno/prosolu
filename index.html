@@ -26,23 +26,48 @@
         </div>
         <ul class="nav-links">
           <li class="nav-item">
-            <a href="#message" class="menu-txt"> Message </a>
+            <button
+              onclick="scrollToSection('message')"
+              class="menu-txt message-btn"
+            >
+              Message
+            </button>
           </li>
           <li class="menu-txt">|</li>
           <li class="nav-item">
-            <a href="#message" class="menu-txt"> Service </a>
+            <button
+              onclick="scrollToSection('service')"
+              class="menu-txt service-btn"
+            >
+              Service
+            </button>
           </li>
           <li class="menu-txt">|</li>
           <li class="nav-item">
-            <a href="#message" class="menu-txt"> Company </a>
+            <button
+              onclick="scrollToSection('company')"
+              class="menu-txt company-btn"
+            >
+              Company
+            </button>
           </li>
           <li class="menu-txt">|</li>
           <li class="nav-item">
-            <a href="#message" class="menu-txt"> Information </a>
+            <button
+              onclick="scrollToSection('information')"
+              class="menu-txt information-btn"
+            >
+              Information
+            </button>
           </li>
           <li class="menu-txt">|</li>
           <li class="nav-item">
-            <a href="#message" class="menu-txt"> Contact </a>
+            <button
+              onclick="scrollToSection('contact')"
+              class="menu-txt contact-btn"
+            >
+              Contact
+            </button>
           </li>
         </ul>
         <div class="hamburger-btn">
@@ -62,7 +87,7 @@
         </div>
       </section>
       <div class="section-linear-group">
-        <section class="message-sec">
+        <section id="message" class="message-sec">
           <div class="container message-title-subsec">
             <h4 class="section-title-en">Message</h4>
             <div class="sec-title-divider"></div>
@@ -93,7 +118,7 @@
           </div>
         </section>
         <hr class="semi-primary" />
-        <section class="solution-sec">
+        <section id="solution" class="solution-sec">
           <div class="container">
             <div class="solution-title-subsec">
               <h4 class="section-title-en">About our Solution</h4>
@@ -137,7 +162,7 @@
             </div>
           </div>
         </section>
-        <section class="service-sec">
+        <section id="service" class="service-sec">
           <div class="container">
             <div class="message-title-subsec">
               <h4 class="section-title-en">Service</h4>
@@ -322,7 +347,7 @@
         </section>
       </div>
       <div class="section-dark-group">
-        <section class="company-sec">
+        <section id="company" class="company-sec">
           <div class="container">
             <div class="container message-title-subsec">
               <h4 class="section-title-en">Company</h4>
@@ -387,7 +412,7 @@
             </div>
           </div>
         </section>
-        <section class="information-sec">
+        <section id="information" class="information-sec">
           <div class="container">
             <div class="container message-title-subsec">
               <h4 class="section-title-en">Information</h4>
@@ -436,7 +461,7 @@
           </div>
         </section>
       </div>
-      <section class="contact-sec">
+      <section id="contact" class="contact-sec">
         <div class="container">
           <div class="container message-title-subsec">
             <h4 class="section-title-en">Contact</h4>
@@ -452,7 +477,7 @@
             <div class="row">
               <div class="sub-row">
                 <p class="contact-txt">企業・団体・学校名</p>
-                <button class="btn-required">必 須</button>
+                <button type="button" class="btn-required">必 須</button>
               </div>
               <div>
                 <input class="contact-txt" type="text" />
@@ -462,7 +487,7 @@
             <div class="row">
               <div class="sub-row">
                 <p class="contact-txt">ご担当者名</p>
-                <button class="btn-required">必 須</button>
+                <button type="button" class="btn-required">必 須</button>
               </div>
               <div class="input-row">
                 <div class="input-subrow">
@@ -478,7 +503,7 @@
             <div class="row mt-6">
               <div class="sub-row">
                 <p class="contact-txt">フリガナ</p>
-                <button class="btn-required">必 須</button>
+                <button type="button" class="btn-required">必 須</button>
               </div>
               <div class="input-row">
                 <div class="input-subrow">
@@ -495,7 +520,7 @@
             <div class="row">
               <div class="sub-row">
                 <p class="contact-txt">メールアドレス</p>
-                <button class="btn-required">必 須</button>
+                <button type="button" class="btn-required">必 須</button>
               </div>
               <div>
                 <input class="contact-txt" type="text" />
@@ -506,7 +531,7 @@
             <div class="row">
               <div class="sub-row">
                 <p class="contact-txt">電話番号</p>
-                <button class="btn-required">必 須</button>
+                <button type="button" class="btn-required">必 須</button>
               </div>
               <div>
                 <input class="contact-txt" type="text" />
@@ -516,7 +541,7 @@
             <div class="row">
               <div class="sub-row">
                 <p class="contact-txt">お問合せ内容</p>
-                <button class="btn-required">必 須</button>
+                <button type="button" class="btn-required">必 須</button>
               </div>
               <div>
                 <input class="contact-txt" type="text" />
@@ -526,7 +551,7 @@
             <div class="row">
               <div class="sub-row">
                 <p class="contact-txt">個人情報の取り扱い</p>
-                <button class="btn-required">必 須</button>
+                <button type="button" class="btn-required">必 須</button>
               </div>
               <div>
                 <div>
