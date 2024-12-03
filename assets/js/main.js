@@ -25,6 +25,12 @@ $(document).ready(function () {
       once: true,
     });
   });
+
+  $(".checkmark").click(function () {
+    $(".checkbox").prop("checked", function (i, val) {
+      return !val;
+    });
+  });
 });
 
 function scrollToSection(sectionId) {
