@@ -1,10 +1,10 @@
 $(document).ready(function () {
-  gsap.registerPlugin(ScrollTrigger);
-
   $(".hamburger-btn").click(function () {
     $(this).toggleClass("change");
     $(".nav-links").toggleClass("active");
   });
+
+  gsap.registerPlugin(ScrollTrigger);
 
   $(".fade-up").each(function () {
     $(this).css({
